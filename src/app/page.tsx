@@ -3,18 +3,9 @@ import { CommentsForm } from "@/components/commentsForm";
 
 import Image from "next/image";
 import { StackCarousel } from "@/components/stackCarousel";
+import { Projects } from "@/components/projects";
 
-export default async function Home() {
-  const res = await fetch("https://api.github.com/users/mateusranzani/repos", {
-    next: { revalidate: 3600 },
-  });
-
-  if (!res.ok) {
-    throw new Error("Erro ao buscar posts");
-  }
-
-  const repos = await res.json();
-
+export default function Home() {
   return (
     <>
       <main className="flex gap-8 h-screen">
@@ -254,58 +245,8 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <div className="w-full px-12 my-12 gap-12">
-        <h5 className="text-4xl font-semibold text-white mx-auto w-fit">
-          Meus <span className="text-[var(--orange-bg)]">projetos</span>
-        </h5>
-        <div className="text-center text-white font-thin mt-4">
-          {repos.length} projetos atualmente
-        </div>
-        <div className="content-buttons"></div>
+      <Projects />
 
-        <div
-          className="max-h-[750px] overflow-y-auto overflow-x-hidden my-12 overflow-y-scroll
-            [&::-webkit-scrollbar]:w-2
-            [&::-webkit-scrollbar-track]:bg-transparent
-            [&::-webkit-scrollbar-thumb]:bg-[var(--orange-bg)]
-            [&::-webkit-scrollbar-thumb]:rounded-full"
-        >
-          <div className="grid gap-4">
-            {repos.map((repo: any) => (
-              <div
-                key={repo.id}
-                className="p-4 bg-[var(--primary-bg)] rounded-2xl"
-              >
-                <h5 className="text-white font-semibold text-lg">
-                  {repo.name}
-                </h5>
-                {repo.homepage && (
-                  <div className="text-sm text-gray-400">
-                    Homepage:{" "}
-                    <a
-                      href={repo.homepage}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-500 hover:underline"
-                    >
-                      {repo.homepage}
-                    </a>
-                  </div>
-                )}
-                <p className="text-white mt-2">{repo.description}</p>
-                <a
-                  href={repo.html_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:underline mt-4 block"
-                >
-                  Ver no GitHub
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
       <section className="py-12 px-8 md:px-16 flex flex-col md:flex-row items-center justify-between gap-12">
         <div className="flex-1">
           <h2 className="text-4xl font-bold mb-8 text-white">

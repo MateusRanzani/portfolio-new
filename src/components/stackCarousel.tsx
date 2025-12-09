@@ -24,7 +24,7 @@ const skills = [
 
 export function StackCarousel() {
   return (
-    <div className="lg:w-[700px] mx-auto px-12 my-14">
+    <section className="lg:w-[700px] mx-auto px-12 my-14">
       <div className="py-4 flex flex-col justify-between items-center bg-[var(--primary-bg)] rounded-2xl">
         <h5 className="text-4xl font-semibold text-white">Habilidades</h5>
         <div className="text-[var(--terciary-bg)] text-center my-4">
@@ -44,6 +44,6 @@ export function StackCarousel() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
