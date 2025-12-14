@@ -1,5 +1,5 @@
 import { Star, Github, ExternalLink } from "lucide-react";
-import { GithubRepo } from "@/types/github";
+import { GithubRepo } from "@/interfaces/github";
 import { getLanguageColor } from "@/lib/getLanguageColor";
 
 type ProjectCardProps = {
@@ -12,7 +12,7 @@ export function ProjectCard({ repo, index }: ProjectCardProps) {
 
   return (
     <article
-      className="group relative glass-card rounded-xl p-6 transition-all duration-500 hover-glow-effect hover:border-primary/40 hover:-translate-y-1 animate-fade-up"
+      className="opacity-0 group relative glass-card rounded-xl p-6 transition-all duration-500 hover-glow-effect hover:border-primary/40 hover:-translate-y-1 animate-fade-up"
       style={{ animationDelay: `${index * 100}ms` }}
     >
       <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

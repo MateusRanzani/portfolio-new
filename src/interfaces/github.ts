@@ -1,4 +1,4 @@
-export type GithubRepo = {
+export interface GithubRepo {
   id: number;
   name: string;
   description: string | null;
@@ -6,4 +6,4 @@ export type GithubRepo = {
   homepage: string | null;
   language: string | null;
   stargazers_count: number;
-};
+}

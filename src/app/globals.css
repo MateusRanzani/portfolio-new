@@ -143,6 +143,20 @@
 }
 
 @layer utilities {
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.5s ease-out forwards;
+  }
   .glass-card {
     background-color: hsl(var(--glass) / 0.6);
     backdrop-filter: blur(16px);
@@ -154,7 +168,7 @@
   }
 
   .hover-glow-effect:hover {
-    box-shadow: 0 0 20px -10px hsla(27, 100%, 50%, 0.3);
+    box-shadow: 0 0 25px -10px hsla(27, 100%, 50%, 0.3);
   }
 
   .text-gradient {
