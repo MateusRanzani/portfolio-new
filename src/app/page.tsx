@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { CommentsForm } from "@/components/commentsForm";
+import { CommentsForm } from "@/components/CommentsForm";
 
 import Image from "next/image";
-import { StackCarousel } from "@/components/stackCarousel";
-import { Projects } from "@/components/projects";
+import { StackCarousel } from "@/components/StackCarousel";
+import { Projects } from "@/components/Projects";
 
 export default function Home() {
   return (

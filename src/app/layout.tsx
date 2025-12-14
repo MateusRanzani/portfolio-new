@@ -2,7 +2,7 @@ import "./globals.css";
 import "swiper/css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import { Menu } from "@/components/menu";
+import { Menu } from "@/components/Menu";
 import { AnimationProvider } from "@/providers/animationProvider";
 
 const poppins = Poppins({
