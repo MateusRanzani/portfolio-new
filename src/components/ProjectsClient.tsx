@@ -29,7 +29,12 @@ export function ProjectsClient({ repos }: { repos: GithubRepo[] }) {
         <p className="text-pretty text-muted-foreground">
           Confira alguns dos meus projetos recentes
         </p>
-        {repos.length} projetos atualmente
+        <div className="mt-2">
+          <b className="text-[var(--orange-bg)] font-semibold">
+            {repos.length}
+          </b>{" "}
+          projetos atualmente
+        </div>
       </div>
       <LanguageFilter
         languages={languages}
