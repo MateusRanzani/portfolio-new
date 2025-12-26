@@ -5,6 +5,7 @@ import { CircleArrowOutUpRight } from "lucide-react";
 import { StackCarousel } from "@/components/StackCarousel";
 import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
+import { Expertise } from "@/components/Expertise";
 
 export default function Home() {
   return (
@@ -106,7 +107,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-img image-container relative w-full h-[100%] max-h-[95%] lg:w-[655px] lg:h-screen  lg:mr-12">
+        <div className="hero-img image-container relative w-full h-[100%] max-h-[95%] lg:w-[655px] lg:h-screen lg:mr-12">
           <div className="hero-img-wrapper w-full h-full rounded-b-[655px] overflow-hidden">
             <Image
               src="/main.png"
@@ -216,7 +217,7 @@ export default function Home() {
       </div>
       <StackCarousel />
       <div className="w-full px-4 lg:px-12 my-12">
-        <div className="py-12 bg-[var(--primary-bg)] rounded-2xl lg:grid lg:grid-cols-2">
+        <div className="lg:py-12 bg-[var(--primary-bg)] rounded-2xl lg:grid lg:grid-cols-2">
           <div className="relative w-full h-full hidden lg:flex">
             <Image
               src="/career.svg"
@@ -229,7 +230,7 @@ export default function Home() {
             <h5 className="flex justify-center gap-2 lg:justify-start text-2xl lg:text-4xl font-semibold text-white">
               Minha <span className="text-[var(--orange-bg)]">carreira</span>
             </h5>
-            <p className="text-white mt-4">
+            <p className="text-white mt-4 text-center lg:text-start">
               Sou <span className="text-[var(--orange-bg)]">graduado</span> em
               <span className="text-[var(--orange-bg)]">
                 Análise e Desenvolvimento de Sistemas
@@ -262,91 +263,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* <div className="grid grid-cols-3 px-12 my-12 gap-12">
-        <div className="p-8 bg-[var(--primary-bg)] rounded-2xl">
-          <div className="flex gap-4">
-            <h5 className="text-white font-semibold text-lg">Front-end</h5>
-            <hr className="border-t-2 border-[var(--orange-bg)] my-4 flex-1" />
-          </div>
-          <div className="mt-2 text-white text-sm">
-            <p>
-              Gosto de criar do zero e transformar ideias em experiências vivas
-              no navegador.
-            </p>
-            <br />
-            <p>
-              <span className="font-bold text-[var(--orange-bg)]">
-                Ferramentas:
-              </span>{" "}
-              NextJS, ReatJS, Javascript, HTML, CSS
-            </p>
-            <br />
-            <p>
-              Possuo ampla experiência em frontend, trabalhando tanto com
-              frameworks modernos, como Next.js e React, quanto com JavaScript
-              puro, incluindo manipulação direta da DOM.
-              <br />
-              <br /> Experiencia: 4 anos
-            </p>
-          </div>
-        </div>
-        <div className="p-8 bg-[var(--primary-bg)] rounded-2xl">
-          <div className="flex gap-4">
-            <h5 className="text-white font-semibold text-lg">Back-end</h5>
-            <hr className="border-t-2 border-[var(--orange-bg)] my-4 flex-1" />
-          </div>
-          <div className="mt-2 text-white text-sm">
-            <p>Todo bom site nasce de uma arquitetura bem planejada.</p>
-            <br />
-            <p>
-              <span className="font-bold text-[var(--orange-bg)]">
-                Ferramentas:
-              </span>{" "}
-              PHP, Java, NodeJs.
-            </p>
-            <br />
-            <p>
-              Atuei em projetos de back-end utilizando PHP, Java e Node.js,
-              adquirindo experiência no desenvolvimento de estruturas sólidas e
-              lógicas, sempre focadas organização e boas práticas.
-              <br />
-              <br />
-              Experiencia: 4 anos
-            </p>
-          </div>
-        </div>
-        <div className="p-8 bg-[var(--primary-bg)] rounded-2xl">
-          <div className="flex gap-4">
-            <h5 className="text-white font-semibold text-lg">
-              Designer Gráfico
-            </h5>
-            <hr className="border-t-2 border-[var(--orange-bg)] my-4 flex-1" />
-          </div>
-          <div className="mt-2 text-white text-sm">
-            <p>Cada criação começa com uma faísca de criatividade.</p>
-            <br />
-            <p>
-              <span className="font-bold text-[var(--orange-bg)]">
-                Ferramentas:
-              </span>{" "}
-              Figma, Photoshop, Illustrator, CorelDraw.
-            </p>
-            <br />
-            <p>
-              Antes da minha formação, trabalhei como designer gráfico,
-              experiência que hoje me ajuda a criar interfaces criativas,
-              amigáveis e funcionais, unindo estética e usabilidade.
-              <br />
-              <br />
-              Experiencia: 4 anos
-            </p>
-          </div>
-        </div>
-      </div>
+      <Expertise />
       <Projects />
-
       <Contact />
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer> */}
+      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
     </>
   );
 }

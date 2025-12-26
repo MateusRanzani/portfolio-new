@@ -2,13 +2,13 @@ import { CommentsForm } from "./CommentsForm";
 
 export function Contact() {
   return (
-    <section className="py-12 px-8 md:px-16 flex flex-col md:flex-row items-center relative justify-between gap-12">
+    <section className="px-4 lg:py-12 lg:px-8 md:px-16 flex flex-col md:flex-row lg:items-center relative lg:justify-between lg:gap-12 mt-[64px]">
       <div className="z-10">
-        <h2 className="text-4xl font-bold mb-8 text-white">
+        <h2 className="text-2xl lg:text-4xl font-bold mb-8 text-white">
           Entre em contato{" "}
           <span className="text-[var(--orange-bg)]">comigo!</span>
         </h2>
-        <div className="ml-14">
+        <div className="lg:ml-14">
           <div className="flex items-center gap-4 mb-4">
             <img
               src="/avatar.png"
@@ -115,10 +115,10 @@ export function Contact() {
           </ul>
         </div>
       </div>
-      <div className="flex-1 bg-[#1b1b1b] rounded-2xl p-8 shadow-lg w-full md:w-auto">
+      <div className="flex-1 bg-[#1b1b1b] rounded-2xl my-8 lg:m-auto lg:p-8 shadow-lg w-full md:w-auto">
         <CommentsForm />
       </div>
-      <div className="absolute top-0 left-0 w-[100px] h-full bg-[var(--orange-bg)] rounded-tr-[48px] rounded-br-[48px]"></div>
+      <div className="hidden lg:flex absolute top-0 left-0 w-[100px] h-full bg-[var(--orange-bg)] rounded-tr-[48px] rounded-br-[48px]"></div>
     </section>
   );
 }
