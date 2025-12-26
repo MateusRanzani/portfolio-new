@@ -24,10 +24,12 @@ const skills = [
 
 export function StackCarousel() {
   return (
-    <section className="lg:w-[700px] mx-auto px-12 my-14">
+    <section className="lg:w-[700px] lg:mx-auto lg:px-12 lg:my-14 px-4 my-[42px]">
       <div className="py-4 flex flex-col justify-between items-center bg-[var(--primary-bg)] rounded-2xl">
-        <h5 className="text-4xl font-semibold text-white">Habilidades</h5>
-        <div className="text-[var(--terciary-bg)] text-center my-4">
+        <h5 className="text-2xl lg:text-4xl font-semibold text-white">
+          Habilidades
+        </h5>
+        <div className="text-[var(--terciary-bg)] text-center my-4 text-base">
           Linguagens são apenas{" "}
           <span className="text-[var(--orange-bg)]">ferramentas</span> para
           solução de <span className="text-[var(--orange-bg)]">problemas</span>.
@@ -37,7 +39,7 @@ export function StackCarousel() {
             <Badge
               key={skill}
               variant="default"
-              className="px-2 py-1 text-xs font-medium "
+              className="px-4 py-2 lg:px-2 lg:py-1 text-xs font-medium "
             >
               {skill}
             </Badge>
