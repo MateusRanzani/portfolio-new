@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { CommentsForm } from "@/components/CommentsForm";
 
 import Image from "next/image";
 import { StackCarousel } from "@/components/StackCarousel";
 import { Projects } from "@/components/Projects";
+import { Contact } from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -247,71 +247,7 @@ export default function Home() {
       </div>
       <Projects />
 
-      <section className="py-12 px-8 md:px-16 flex flex-col md:flex-row items-center justify-between gap-12">
-        <div className="flex-1">
-          <h2 className="text-4xl font-bold mb-8 text-white">
-            Entre em contato{" "}
-            <span className="text-[var(--orange-bg)]">comigo!</span>
-          </h2>
-
-          <div className="flex items-center gap-4 mb-4">
-            <img
-              src="/avatar.png"
-              alt="Mateus Ranzani"
-              className="w-24 h-24 rounded-full border-4 border-[var(--orange-bg)]"
-            />
-            <div>
-              <h3 className="text-xl font-semibold">Mateus Ranzani</h3>
-              <p className="text-gray-400">Desenvolvedor full-stack</p>
-            </div>
-          </div>
-
-          <ul className="space-y-4 mt-6">
-            <li className="flex items-center gap-3">
-              <div>
-                <p className="font-medium">Email</p>
-                <a
-                  href="mailto:mateusranzani238@gmail.com"
-                  className="text-gray-400 hover:text-[var(--orange-bg)] transition"
-                >
-                  mateusranzani238@gmail.com
-                </a>
-              </div>
-            </li>
-
-            <li className="flex items-center gap-3">
-              <div>
-                <p className="font-medium">LinkedIn</p>
-                <a
-                  href="https://www.linkedin.com/in/mateus-ranzani"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-[var(--orange-bg)] transition"
-                >
-                  linkedin.com/in/mateus-ranzani
-                </a>
-              </div>
-            </li>
-
-            <li className="flex items-center gap-3">
-              <div>
-                <p className="font-medium">Github</p>
-                <a
-                  href="https://github.com/MateusRanzani"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-[var(--orange-bg)] transition"
-                >
-                  github.com/MateusRanzani
-                </a>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div className="flex-1 bg-[#1b1b1b] rounded-2xl p-8 shadow-lg w-full md:w-auto">
-          <CommentsForm />
-        </div>
-      </section>
+      <Contact />
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
     </>
   );
