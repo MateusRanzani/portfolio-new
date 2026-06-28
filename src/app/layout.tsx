@@ -3,6 +3,7 @@ import "swiper/css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { Menu } from "@/components/Menu";
+import { Cursor } from "@/components/Cursor";
 import { AnimationProvider } from "@/providers/animationProvider";
 
 const poppins = Poppins({
@@ -54,6 +55,7 @@ export default function RootLayout({
       <body
         className={`${poppins.className} antialiased bg-[var(--secondary-bg)]`}
       >
+        <Cursor />
         <Menu />
         <AnimationProvider>{children}</AnimationProvider>
       </body>

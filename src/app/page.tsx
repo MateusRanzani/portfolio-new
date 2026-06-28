@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button";
-
 import Image from "next/image";
 import { CircleArrowOutUpRight } from "lucide-react";
 import { StackCarousel } from "@/components/StackCarousel";
@@ -96,7 +94,7 @@ function SocialLinks({ className }: SocialLinksProps) {
 export default function Home() {
   return (
     <>
-      <main className="lg:flex lg:gap-8 h-screen">
+      <main id="apresentacao" className="lg:flex lg:gap-8 h-screen">
         <div className="hidden lg:flex items-center flex-1">
           <div className="ml-12 gap-12 grid">
             <p className="hero-text-1 text-[var(--terciary-bg)] text-[32px]">
@@ -116,9 +114,12 @@ export default function Home() {
                 tudo é possível. <br />
               </p>
             </div>
-            <Button className="hero-btn bg-[var(--orange-bg)] rounded-xl hover:bg-accent text-primary-foreground cursor-pointer w-fit px-12 py-6 text-lg">
+            <a
+              href="#contato"
+              className="hero-btn inline-flex items-center justify-center bg-[var(--orange-bg)] hover:bg-[#e06300] active:bg-[#c95800] text-white font-medium rounded-xl px-12 py-6 text-lg transition-colors duration-200"
+            >
               Me contate
-            </Button>
+            </a>
             <SocialLinks />
           </div>
         </div>
@@ -143,9 +144,12 @@ export default function Home() {
             <div className="bg-[var(--primary-bg)] text-[23px] text-white font-bold py-2 px-6 w-fit rounded-2xl">
               Desenvolvedor Full-stack
             </div>
-            <Button className="hero-btn bg-[var(--orange-bg)] rounded-xl hover:bg-accent text-primary-foreground cursor-pointer w-full px-12 py-6 text-lg h-[54px]">
-              Me contate <CircleArrowOutUpRight />
-            </Button>
+            <a
+              href="#contato"
+              className="hero-btn inline-flex items-center justify-center gap-2 bg-[var(--orange-bg)] hover:bg-[#e06300] active:bg-[#c95800] text-white font-medium rounded-xl w-full px-12 py-6 text-lg h-[54px] transition-colors duration-200"
+            >
+              Me contate <CircleArrowOutUpRight className="w-5 h-5" />
+            </a>
             <SocialLinks className="mt-6" />
           </div>
         </div>
@@ -161,6 +165,7 @@ export default function Home() {
           é possível. <br />
         </p>
       </div>
+      <section id="sobre">
       <StackCarousel />
       <div className="career-section w-full px-4 lg:px-12 my-12">
         <div className="career-card lg:py-12 bg-[var(--primary-bg)] rounded-2xl lg:grid lg:grid-cols-2">
@@ -210,6 +215,7 @@ export default function Home() {
         </div>
       </div>
       <Expertise />
+      </section>
       <Projects />
       <Contact />
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>

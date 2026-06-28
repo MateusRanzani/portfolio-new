@@ -2,7 +2,7 @@ import { CommentsForm } from "./CommentsForm";
 
 export function Contact() {
   return (
-    <section className="contact-section relative mt-16 lg:mt-24 overflow-hidden">
+    <section id="contato" className="contact-section relative mt-16 lg:mt-24 overflow-hidden">
       {/* Orange left bar — visible only on large screens */}
       <div className="contact-bar hidden lg:flex absolute top-0 left-0 w-[100px] h-full bg-[var(--orange-bg)] rounded-tr-[48px] rounded-br-[48px]" />
 

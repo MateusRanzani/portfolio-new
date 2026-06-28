@@ -1,13 +1,48 @@
-import { Button } from "@/components/ui/button";
+"use client";
+
+import { useState, useEffect } from "react";
+
+const SECTIONS = [
+  { id: "apresentacao", label: "Apresentação" },
+  { id: "sobre", label: "Sobre mim" },
+  { id: "projetos", label: "Projetos" },
+  { id: "contato", label: "Contato" },
+] as const;
+
+type SectionId = (typeof SECTIONS)[number]["id"];
 
 export function Menu() {
+  const [active, setActive] = useState<SectionId>("apresentacao");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      let current: SectionId = "apresentacao";
+      for (const { id } of SECTIONS) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= 120) {
+          current = id;
+        }
+      }
+      setActive(current);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <header
       id="main-header"
       className="fixed top-2 left-1/2 -translate-x-1/2 bg-[rgba(255,255,255,0.02)] rounded-[200px] h-fit w-fit py-2 px-4 z-50 backdrop-blur"
     >
       <nav className="flex items-center justify-between">
-        <div className="flex items-center justify-center mr-6">
+        {/* Logo */}
+        <a
+          href="#apresentacao"
+          className="flex items-center justify-center mr-6"
+          aria-label="Ir para o início"
+        >
           <div className="w-8 h-8 flex items-center justify-center">
             <svg
               width="53"
@@ -22,41 +57,41 @@ export function Menu() {
               />
             </svg>
           </div>
-        </div>
+        </a>
 
+        {/* Nav links */}
         <div className="hidden md:flex items-center gap-6 nav-links">
-          <a
-            href="#apresentacao"
-            className="text-[var(--orange-bg)] font-medium hover:text-accent transition-colors whitespace-nowrap"
-          >
-            Apresentação
-          </a>
-          <a
-            href="#sobre"
-            className="text-white font-medium hover:text-primary transition-colors whitespace-nowrap"
-          >
-            Sobre mim
-          </a>
-          <a
-            href="#projetos"
-            className="text-white font-medium hover:text-primary transition-colors whitespace-nowrap"
-          >
-            Projetos
-          </a>
-          <a
-            href="#contato"
-            className="text-white font-medium hover:text-primary transition-colors whitespace-nowrap"
-          >
-            Contato
-          </a>
+          {SECTIONS.map(({ id, label }) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              className={`font-medium whitespace-nowrap transition-colors duration-200 ${
+                active === id
+                  ? "text-[var(--orange-bg)]"
+                  : "text-white hover:text-[var(--orange-bg)]"
+              }`}
+            >
+              {label}
+            </a>
+          ))}
         </div>
 
-        <Button className="bg-[var(--orange-bg)] rounded-xl hover:bg-accent text-primary-foreground cursor-pointer hero-download hero-download mx-6">
+        {/* Download CV */}
+        <a
+          href="/Profile.pdf"
+          download="Mateus_Ranzani_CV.pdf"
+          className="hero-download mx-6 inline-flex items-center justify-center bg-[var(--orange-bg)] hover:bg-[#e06300] active:bg-[#c95800] text-white font-medium rounded-xl px-5 py-2 text-sm transition-colors duration-200 whitespace-nowrap select-none"
+        >
           Download CV
-        </Button>
+        </a>
 
+        {/* Theme toggles */}
         <div className="flex nav-links">
-          <Button variant="ghost">
+          <button
+            type="button"
+            className="p-2 text-[#E4E4E4] hover:text-white transition-colors rounded-xl"
+            aria-label="Modo claro"
+          >
             <svg
               width="16"
               height="16"
@@ -66,12 +101,17 @@ export function Menu() {
             >
               <path
                 d="M2.44463 12.5841L3.40599 13.5455L4.63327 12.325L3.66508 11.3568M8.20599 3.65909C5.94918 3.65909 4.11508 5.49318 4.11508 7.75C4.11508 10.0068 5.94918 11.8409 8.20599 11.8409C10.4628 11.8409 12.2969 10.0068 12.2969 7.75C12.2969 5.48636 10.4628 3.65909 8.20599 3.65909ZM13.6605 8.43182H15.706V7.06818H13.6605M11.7787 12.325L13.006 13.5455L13.9674 12.5841L12.7469 11.3568M13.9674 2.97727L13.006 2.02273L11.7787 3.24318L12.7469 4.21136M8.88781 0.25H7.52418V2.29545H8.88781M4.63327 3.24318L3.40599 2.02273L2.44463 2.97727L3.66508 4.21136L4.63327 3.24318ZM0.705994 8.43182H2.75145V7.06818H0.705994M8.88781 13.2045H7.52418V15.25H8.88781"
-                fill="#E4E4E4"
+                stroke="currentColor"
+                strokeWidth="1.2"
               />
             </svg>
-          </Button>
+          </button>
 
-          <Button variant="ghost">
+          <button
+            type="button"
+            className="p-2 text-[#E4E4E4] hover:text-white transition-colors rounded-xl"
+            aria-label="Modo escuro"
+          >
             <svg
               width="11"
               height="16"
@@ -81,10 +121,10 @@ export function Menu() {
             >
               <path
                 d="M3.01403 0.250009C2.23108 0.248797 1.4526 0.365162 0.705994 0.595009C2.26808 1.07357 3.63281 2.0255 4.60164 3.31233C5.57048 4.59917 6.0929 6.15377 6.0929 7.75C6.0929 9.34624 5.57048 10.9008 4.60164 12.1877C3.63281 13.4745 2.26808 14.4264 0.705994 14.905C1.76389 15.2291 2.88115 15.3264 3.98123 15.1903C5.08131 15.0542 6.13821 14.6879 7.07951 14.1164C8.02081 13.5449 8.82426 12.7819 9.43482 11.8795C10.0454 10.9771 10.4486 9.95665 10.6169 8.88815C10.7852 7.81965 10.7145 6.72831 10.4098 5.68891C10.105 4.64951 9.57341 3.68662 8.85132 2.8662C8.12923 2.04578 7.23374 1.38723 6.22622 0.935675C5.21869 0.484116 4.12293 0.250218 3.01403 0.250009Z"
-                fill="#E4E4E4"
+                fill="currentColor"
               />
             </svg>
-          </Button>
+          </button>
         </div>
       </nav>
     </header>
