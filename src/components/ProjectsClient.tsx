@@ -18,7 +18,7 @@ export function ProjectsClient({ repos }: { repos: GithubRepo[] }) {
   const filteredProjects = useMemo(() => {
     if (!selectedLanguage) return repos;
     return repos.filter((p) => p.language === selectedLanguage);
-  }, [selectedLanguage]);
+  }, [selectedLanguage, repos]);
 
   return (
     <section className="w-full px-4 lg:px-12 lg:my-12 gap-12">

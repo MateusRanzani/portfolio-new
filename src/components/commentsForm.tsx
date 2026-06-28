@@ -1,35 +1,41 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export function CommentsForm() {
   const [status, setStatus] = useState("");
 
-  async function submitComment(formData: FormData) {
+  async function submitComment(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
     setStatus("Enviando...");
 
-    const res = await fetch("/api/comments", {
-      method: "POST",
-      body: JSON.stringify({
-        name: formData.get("name"),
-        email: formData.get("email"),
-        message: formData.get("message"),
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const form = e.currentTarget;
 
-    if (res.ok) {
-      setStatus("Comentário enviado!");
-    } else {
-      setStatus("Erro ao enviar.");
+    try {
+      const res = await fetch("/api/comments", {
+        method: "POST",
+        body: JSON.stringify({
+          name: (form.elements.namedItem("name") as HTMLInputElement).value,
+          email: (form.elements.namedItem("email") as HTMLInputElement).value,
+          message: (form.elements.namedItem("message") as HTMLTextAreaElement)
+            .value,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (res.ok) {
+        setStatus("Comentário enviado!");
+      } else {
+        setStatus("Erro ao enviar.");
+      }
+    } catch {
+      setStatus("Erro ao enviar. Verifique sua conexão e tente novamente.");
     }
   }
 
-  useEffect(() => {}, []);
-
   return (
-    <form action={submitComment} className="space-y-4">
+    <form onSubmit={submitComment} className="space-y-4">
       <div>
         <label htmlFor="name" className="block text-sm mb-1 text-gray-300">
           Nome
