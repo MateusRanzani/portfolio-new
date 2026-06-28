@@ -2,37 +2,44 @@ import { CommentsForm } from "./CommentsForm";
 
 export function Contact() {
   return (
-    <section className="px-4 lg:py-12 lg:px-8 md:px-16 flex flex-col md:flex-row lg:items-center relative lg:justify-between lg:gap-12 mt-[64px]">
-      <div className="z-10">
-        <h2 className="text-2xl lg:text-4xl font-bold mb-8 text-white">
-          Entre em contato{" "}
-          <span className="text-[var(--orange-bg)]">comigo!</span>
-        </h2>
-        <div className="lg:ml-14">
-          <div className="flex items-center gap-4 mb-4">
+    <section className="contact-section relative mt-16 lg:mt-24 overflow-hidden">
+      {/* Orange left bar — visible only on large screens */}
+      <div className="contact-bar hidden lg:flex absolute top-0 left-0 w-[100px] h-full bg-[var(--orange-bg)] rounded-tr-[48px] rounded-br-[48px]" />
+
+      <div className="relative z-10 px-6 py-12 lg:pl-36 lg:pr-16 xl:pr-24 flex flex-col lg:flex-row lg:items-start gap-12 lg:gap-16">
+        {/* Left panel — contact info */}
+        <div className="contact-info flex-shrink-0 lg:max-w-sm w-full">
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight mb-10">
+            Entre em contato{" "}
+            <span className="text-[var(--orange-bg)]">comigo!</span>
+          </h2>
+
+          {/* Avatar + name */}
+          <div className="flex items-center gap-4 mb-8">
             <img
               src="/avatar.png"
               alt="Mateus Ranzani"
-              className="w-24 h-24 rounded-full border-4 border-[var(--orange-bg)]"
+              className="w-20 h-20 rounded-full border-[3px] border-[var(--orange-bg)] object-cover flex-shrink-0"
             />
             <div>
-              <h3 className="text-xl font-semibold text-white">
+              <h3 className="text-lg font-semibold text-white leading-tight">
                 Mateus Ranzani
               </h3>
-              <p className="text-gray-400">Desenvolvedor full-stack</p>
+              <p className="text-sm text-gray-400 mt-0.5">
+                Desenvolvedor full-stack
+              </p>
             </div>
           </div>
-          <ul className="space-y-4 mt-6">
-            <li className="flex items-center gap-3">
-              <div className="flex items-center gap-2">
-                <span className="w-12 h-12 flex items-center justify-center bg-[var(--orange-bg)]/30 rounded-[4px]">
-                  <svg
-                    width="20"
-                    height="16"
-                    viewBox="0 0 20 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+
+          {/* Contact links */}
+          <ul className="flex flex-col gap-3">
+            <li className="contact-item">
+              <a
+                href="mailto:mateusranzani238@gmail.com"
+                className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[var(--orange-bg)]/50 hover:bg-[var(--orange-bg)]/5 transition-all duration-200"
+              >
+                <span className="w-11 h-11 flex items-center justify-center bg-[var(--orange-bg)]/20 rounded-lg flex-shrink-0 group-hover:bg-[var(--orange-bg)]/30 transition-colors">
+                  <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M0.75 2.75968L8.6406 8.04552C9.3124 8.49559 10.1876 8.49559 10.8594 8.04552L18.75 2.75968M0.75 2.75968C0.75 1.64976 1.64543 0.75 2.75 0.75H16.75C17.8546 0.75 18.75 1.64976 18.75 2.75968M0.75 2.75968V12.8081C0.75 13.918 1.64543 14.8177 2.75 14.8177H16.75C17.8546 14.8177 18.75 13.918 18.75 12.8081V2.75968"
                       stroke="#FD6F00"
@@ -41,56 +48,52 @@ export function Contact() {
                     />
                   </svg>
                 </span>
-                <div>
-                  <p className="font-medium text-white">Email</p>
-                  <a
-                    href="mailto:mateusranzani238@gmail.com"
-                    className="text-gray-300 hover:text-[var(--orange-bg)] transition"
-                  >
+                <div className="min-w-0">
+                  <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-0.5">
+                    Email
+                  </p>
+                  <p className="text-sm font-medium text-white truncate group-hover:text-[var(--orange-bg)] transition-colors">
                     mateusranzani238@gmail.com
-                  </a>
+                  </p>
                 </div>
-              </div>
+              </a>
             </li>
-            <li className="flex items-center gap-3">
-              <div className="flex items-center gap-2">
-                <span className="w-12 h-12 flex items-center justify-center bg-[var(--orange-bg)]/30 rounded-[4px]">
-                  <svg
-                    width="25"
-                    height="26"
-                    viewBox="0 0 25 26"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+
+            <li className="contact-item">
+              <a
+                href="https://www.linkedin.com/in/mateus-ranzani"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[var(--orange-bg)]/50 hover:bg-[var(--orange-bg)]/5 transition-all duration-200"
+              >
+                <span className="w-11 h-11 flex items-center justify-center bg-[var(--orange-bg)]/20 rounded-lg flex-shrink-0 group-hover:bg-[var(--orange-bg)]/30 transition-colors">
+                  <svg width="22" height="22" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M23.2143 0H1.78013C0.797991 0 0 0.821289 0 1.82949V23.5455C0 24.5537 0.797991 25.375 1.78013 25.375H23.2143C24.1964 25.375 25 24.5537 25 23.5455V1.82949C25 0.821289 24.1964 0 23.2143 0ZM7.5558 21.75H3.85045V9.64023H7.56138V21.75H7.5558ZM5.70312 3.625C6.27293 3.625 6.81939 3.85475 7.2223 4.2637C7.62521 4.67266 7.85156 5.22732 7.85156 5.80566C7.85156 6.38401 7.62521 6.93867 7.2223 7.34763C6.81939 7.75658 6.27293 7.98633 5.70312 7.98633C5.13332 7.98633 4.58686 7.75658 4.18395 7.34763C3.78104 6.93867 3.55469 6.38401 3.55469 5.80566C3.55469 5.22732 3.78104 4.67266 4.18395 4.2637C4.58686 3.85475 5.13332 3.625 5.70312 3.625ZM21.4453 21.75H17.74V15.8594C17.74 14.4547 17.7121 12.6479 15.8147 12.6479C13.8839 12.6479 13.5882 14.1771 13.5882 15.7574V21.75H9.88281V9.64023H13.4375V11.2941H13.4877C13.9844 10.3426 15.1953 9.34004 16.9978 9.34004C20.7478 9.34004 21.4453 11.8492 21.4453 15.1117V21.75Z"
                       fill="#FD6F00"
                     />
                   </svg>
                 </span>
-                <div>
-                  <p className="font-medium text-white">LinkedIn</p>
-                  <a
-                    href="https://www.linkedin.com/in/mateus-ranzani"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-[var(--orange-bg)] transition"
-                  >
+                <div className="min-w-0">
+                  <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-0.5">
+                    LinkedIn
+                  </p>
+                  <p className="text-sm font-medium text-white truncate group-hover:text-[var(--orange-bg)] transition-colors">
                     linkedin.com/in/mateus-ranzani
-                  </a>
+                  </p>
                 </div>
-              </div>
+              </a>
             </li>
-            <li className="flex items-center gap-3">
-              <div className="flex items-center gap-2">
-                <span className="w-12 h-12 flex items-center justify-center bg-[var(--orange-bg)]/30 rounded-[4px]">
-                  <svg
-                    width="28"
-                    height="28"
-                    viewBox="0 0 31 31"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+
+            <li className="contact-item">
+              <a
+                href="https://github.com/MateusRanzani"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[var(--orange-bg)]/50 hover:bg-[var(--orange-bg)]/5 transition-all duration-200"
+              >
+                <span className="w-11 h-11 flex items-center justify-center bg-[var(--orange-bg)]/20 rounded-lg flex-shrink-0 group-hover:bg-[var(--orange-bg)]/30 transition-colors">
+                  <svg width="24" height="24" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       fillRule="evenodd"
                       clipRule="evenodd"
@@ -99,26 +102,30 @@ export function Contact() {
                     />
                   </svg>
                 </span>
-                <div>
-                  <p className="font-medium text-white">Github</p>
-                  <a
-                    href="https://github.com/MateusRanzani"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-[var(--orange-bg)] transition"
-                  >
+                <div className="min-w-0">
+                  <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-0.5">
+                    GitHub
+                  </p>
+                  <p className="text-sm font-medium text-white truncate group-hover:text-[var(--orange-bg)] transition-colors">
                     github.com/MateusRanzani
-                  </a>
+                  </p>
                 </div>
-              </div>
+              </a>
             </li>
           </ul>
         </div>
+
+        {/* Right panel — form */}
+        <div className="contact-form flex-1 bg-[#1b1b1b] rounded-2xl p-6 lg:p-8 xl:p-10 border border-white/5 shadow-2xl w-full">
+          <h3 className="text-xl font-semibold text-white mb-1">
+            Envie uma mensagem
+          </h3>
+          <p className="text-sm text-gray-400 mb-8">
+            Responderei o mais breve possível.
+          </p>
+          <CommentsForm />
+        </div>
       </div>
-      <div className="flex-1 bg-[#1b1b1b] rounded-2xl my-8 lg:m-auto lg:p-8 shadow-lg w-full md:w-auto">
-        <CommentsForm />
-      </div>
-      <div className="hidden lg:flex absolute top-0 left-0 w-[100px] h-full bg-[var(--orange-bg)] rounded-tr-[48px] rounded-br-[48px]"></div>
     </section>
   );
 }

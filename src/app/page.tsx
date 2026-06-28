@@ -162,9 +162,9 @@ export default function Home() {
         </p>
       </div>
       <StackCarousel />
-      <div className="w-full px-4 lg:px-12 my-12">
-        <div className="lg:py-12 bg-[var(--primary-bg)] rounded-2xl lg:grid lg:grid-cols-2">
-          <div className="relative w-full h-full hidden lg:flex">
+      <div className="career-section w-full px-4 lg:px-12 my-12">
+        <div className="career-card lg:py-12 bg-[var(--primary-bg)] rounded-2xl lg:grid lg:grid-cols-2">
+          <div className="career-img relative w-full h-full hidden lg:flex">
             <Image
               src="/career.svg"
               alt="Imagem principal"
@@ -173,10 +173,10 @@ export default function Home() {
             />
           </div>
           <div>
-            <h5 className="flex justify-center gap-2 lg:justify-start text-2xl lg:text-4xl font-semibold text-white">
+            <h5 className="career-title flex justify-center gap-2 lg:justify-start text-2xl lg:text-4xl font-semibold text-white">
               Minha <span className="text-[var(--orange-bg)]">carreira</span>
             </h5>
-            <p className="text-white mt-4 text-center lg:text-start">
+            <p className="career-text text-white mt-4 text-center lg:text-start">
               Sou <span className="text-[var(--orange-bg)]">graduado</span> em
               <span className="text-[var(--orange-bg)]">
                 Análise e Desenvolvimento de Sistemas

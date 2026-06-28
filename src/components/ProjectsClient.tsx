@@ -21,11 +21,11 @@ export function ProjectsClient({ repos }: { repos: GithubRepo[] }) {
   }, [selectedLanguage, repos]);
 
   return (
-    <section className="w-full px-4 lg:px-12 lg:my-12 gap-12">
-      <h5 className="text-2xl lg:text-4xl font-semibold text-white mx-auto w-fit">
+    <section className="projects-section w-full px-4 lg:px-12 lg:my-12 gap-12">
+      <h5 className="projects-title text-2xl lg:text-4xl font-semibold text-white mx-auto w-fit">
         Meus <span className="text-[var(--orange-bg)]">projetos</span>
       </h5>
-      <div className="text-center text-white font-thin mt-4">
+      <div className="projects-subtitle text-center text-white font-thin mt-4">
         <p className="text-base text-pretty text-muted-foreground">
           Confira alguns dos meus projetos recentes
         </p>

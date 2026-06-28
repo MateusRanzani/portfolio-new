@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 
 export function Expertise() {
   return (
-    <section className="lg:my-12 lg:px-12">
+    <section className="expertise-section lg:my-12 lg:px-12">
       <Swiper
         modules={[Pagination]}
         spaceBetween={24}
@@ -27,10 +27,10 @@ export function Expertise() {
       >
         {/* Front-end */}
         <SwiperSlide>
-          <div className="p-8 bg-[var(--primary-bg)] rounded-2xl h-full">
+          <div className="expertise-card p-8 bg-[var(--primary-bg)] rounded-2xl h-full">
             <div className="flex gap-4">
               <h5 className="text-white font-semibold text-lg">Front-end</h5>
-              <hr className="border-t-2 border-[var(--orange-bg)] my-4 flex-1" />
+              <hr className="expertise-hr border-t-2 border-[var(--orange-bg)] my-4 flex-1" />
             </div>
 
             <div className="mt-2 text-white text-sm">
@@ -59,10 +59,10 @@ export function Expertise() {
 
         {/* Back-end */}
         <SwiperSlide>
-          <div className="p-8 bg-[var(--primary-bg)] rounded-2xl h-full">
+          <div className="expertise-card p-8 bg-[var(--primary-bg)] rounded-2xl h-full">
             <div className="flex gap-4">
               <h5 className="text-white font-semibold text-lg">Back-end</h5>
-              <hr className="border-t-2 border-[var(--orange-bg)] my-4 flex-1" />
+              <hr className="expertise-hr border-t-2 border-[var(--orange-bg)] my-4 flex-1" />
             </div>
 
             <div className="mt-2 text-white text-sm">
@@ -88,12 +88,12 @@ export function Expertise() {
 
         {/* Design */}
         <SwiperSlide>
-          <div className="p-8 bg-[var(--primary-bg)] rounded-2xl h-full">
+          <div className="expertise-card p-8 bg-[var(--primary-bg)] rounded-2xl h-full">
             <div className="flex gap-4">
               <h5 className="text-white font-semibold text-lg">
                 Designer Gráfico
               </h5>
-              <hr className="border-t-2 border-[var(--orange-bg)] my-4 flex-1" />
+              <hr className="expertise-hr border-t-2 border-[var(--orange-bg)] my-4 flex-1" />
             </div>
 
             <div className="mt-2 text-white text-sm">
