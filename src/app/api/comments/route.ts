@@ -1,20 +1,69 @@
 import { connectDB } from "@/lib/mongoose";
 import { Comments } from "@/models/Comments";
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export async function GET() {
   await connectDB();
 
   const comments = await Comments.find({ approved: true });
-  return Response.json(comments);
+  return Response.json({ success: true, data: comments });
 }
 
 export async function POST(req: Request) {
-  await connectDB();
+  try {
+    await connectDB();
 
-  const data = await req.json();
-  const comments = await Comments.create(data);
+    const body: unknown = await req.json();
 
-  return Response.json(comments);
+    if (
+      typeof body !== "object" ||
+      body === null ||
+      Array.isArray(body)
+    ) {
+      return Response.json(
+        { success: false, message: "Invalid request body." },
+        { status: 400 }
+      );
+    }
+
+    const { name, email, message } = body as Record<string, unknown>;
+
+    if (!name || typeof name !== "string" || name.trim() === "") {
+      return Response.json(
+        { success: false, message: "Field 'name' is required and must be a non-empty string." },
+        { status: 400 }
+      );
+    }
+
+    if (!email || typeof email !== "string" || !EMAIL_REGEX.test(email.trim())) {
+      return Response.json(
+        { success: false, message: "Field 'email' is required and must be a valid email address." },
+        { status: 400 }
+      );
+    }
+
+    if (!message || typeof message !== "string" || message.trim() === "") {
+      return Response.json(
+        { success: false, message: "Field 'message' is required and must be a non-empty string." },
+        { status: 400 }
+      );
+    }
+
+    const comment = await Comments.create({
+      name: name.trim(),
+      email: email.trim(),
+      message: message.trim(),
+    });
+
+    return Response.json({ success: true, data: comment }, { status: 201 });
+  } catch (error) {
+    console.error("[POST /api/comments]", error);
+    return Response.json(
+      { success: false, message: "Internal server error." },
+      { status: 500 }
+    );
+  }
 }
 
 export async function PATCH(req: Request) {

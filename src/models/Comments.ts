@@ -18,6 +18,10 @@ const CommentsSchema = new Schema(
       required: true,
       trim: true,
     },
+    approved: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,
