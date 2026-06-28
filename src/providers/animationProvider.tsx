@@ -142,65 +142,24 @@ export function AnimationProvider({ children }: ProviderProps) {
           },
         }
       );
-    });
 
-    ScrollTrigger.create({
-      start: "top top",
-      end: "max",
-      onUpdate: (self) => {
-        const current = self.scroll();
-        const scrollingDown = current > lastScroll && current > 120;
-        const scrollingUp = current < lastScroll;
+      ScrollTrigger.create({
+        start: "top top",
+        end: "max",
+        onUpdate: (self) => {
+          const current = self.scroll();
+          const scrollingDown = current > lastScroll && current > 120;
+          const scrollingUp = current < lastScroll;
 
-        if (current < 50) {
-          if (showTimeout) clearTimeout(showTimeout);
+          if (current < 50) {
+            if (showTimeout) clearTimeout(showTimeout);
 
-          gsap.to(".nav-links", {
-            opacity: 1,
-            width: "auto",
-            visibility: "visible",
-            overflow: "visible",
-            duration: 0.4,
-            ease: "power2.out",
-          });
-
-          gsap.to(".hero-download", {
-            marginRight: 24,
-            marginLeft: 24,
-          });
-
-          lastScroll = current;
-          return;
-        }
-
-        if (scrollingDown) {
-          if (showTimeout) clearTimeout(showTimeout);
-
-          gsap.to(".nav-links", {
-            opacity: 0,
-            width: 0,
-            visibility: "hidden",
-            overflow: "hidden",
-            duration: 0.4,
-            ease: "power2.out",
-          });
-
-          gsap.to(".hero-download", {
-            marginRight: 0,
-            marginLeft: 0,
-          });
-        }
-
-        if (scrollingUp) {
-          if (showTimeout) clearTimeout(showTimeout);
-
-          showTimeout = setTimeout(() => {
             gsap.to(".nav-links", {
               opacity: 1,
               width: "auto",
               visibility: "visible",
               overflow: "visible",
-              duration: 0.5,
+              duration: 0.4,
               ease: "power2.out",
             });
 
@@ -208,11 +167,52 @@ export function AnimationProvider({ children }: ProviderProps) {
               marginRight: 24,
               marginLeft: 24,
             });
-          }, 200);
-        }
 
-        lastScroll = current;
-      },
+            lastScroll = current;
+            return;
+          }
+
+          if (scrollingDown) {
+            if (showTimeout) clearTimeout(showTimeout);
+
+            gsap.to(".nav-links", {
+              opacity: 0,
+              width: 0,
+              visibility: "hidden",
+              overflow: "hidden",
+              duration: 0.4,
+              ease: "power2.out",
+            });
+
+            gsap.to(".hero-download", {
+              marginRight: 0,
+              marginLeft: 0,
+            });
+          }
+
+          if (scrollingUp) {
+            if (showTimeout) clearTimeout(showTimeout);
+
+            showTimeout = setTimeout(() => {
+              gsap.to(".nav-links", {
+                opacity: 1,
+                width: "auto",
+                visibility: "visible",
+                overflow: "visible",
+                duration: 0.5,
+                ease: "power2.out",
+              });
+
+              gsap.to(".hero-download", {
+                marginRight: 24,
+                marginLeft: 24,
+              });
+            }, 200);
+          }
+
+          lastScroll = current;
+        },
+      });
     });
 
     return () => ctx.revert();
