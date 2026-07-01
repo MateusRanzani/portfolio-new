@@ -28,9 +28,13 @@ export function Contact() {
               <h3 className="text-lg font-semibold text-white leading-tight">
                 Mateus Ranzani
               </h3>
+<<<<<<< HEAD
               <p className="text-sm text-gray-400 mt-0.5">
                 Desenvolvedor Full-Stack
               </p>
+=======
+              <p className="text-gray-400">Desenvolvedor Full-Stack</p>
+>>>>>>> worktree-agent-a2abd0faa7ea86815
             </div>
           </div>
 
