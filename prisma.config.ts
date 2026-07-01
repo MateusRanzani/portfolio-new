@@ -10,7 +10,5 @@ export default defineConfig({
   },
   datasource: {
     url: process.env["DATABASE_URL"],
-    // directUrl é usado pelo Prisma nas migrations (necessário com Supabase Pooler)
-    directUrl: process.env["DIRECT_URL"],
   },
 });
