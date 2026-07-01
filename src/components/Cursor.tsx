@@ -51,8 +51,11 @@ export function Cursor() {
 
     // ── Ring com lag via ticker ──────────────────
     const tickerFn = () => {
-      ringX += (mouseX - ringX) * 0.1;
-      ringY += (mouseY - ringY) * 0.1;
+      const dx = mouseX - ringX;
+      const dy = mouseY - ringY;
+      if (Math.abs(dx) < 0.05 && Math.abs(dy) < 0.05) return;
+      ringX += dx * 0.1;
+      ringY += dy * 0.1;
       setRingX(ringX);
       setRingY(ringY);
     };

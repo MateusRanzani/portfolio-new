@@ -4,6 +4,7 @@ import { StackCarousel } from "@/components/StackCarousel";
 import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
 import { Expertise } from "@/components/Expertise";
+import { CommentsSection } from "@/components/CommentsSection";
 
 interface SocialLinksProps {
   className?: string;
@@ -218,6 +219,7 @@ export default function Home() {
       </section>
       <Projects />
       <Contact />
+      <CommentsSection />
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
     </>
   );
