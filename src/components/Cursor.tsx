@@ -187,13 +187,13 @@ export function Cursor() {
       {/* Ponto — segue o mouse instantaneamente */}
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-white pointer-events-none z-[9999]"
+        className="hidden pointer-fine:block fixed top-0 left-0 w-2 h-2 rounded-full bg-white pointer-events-none z-[9999]"
         style={{ willChange: "transform" }}
       />
       {/* Anel — segue com lag suave */}
       <div
         ref={ringRef}
-        className="fixed top-0 left-0 w-9 h-9 rounded-full border border-white/50 pointer-events-none z-[9998]"
+        className="hidden pointer-fine:block fixed top-0 left-0 w-9 h-9 rounded-full border border-white/50 pointer-events-none z-[9998]"
         style={{ willChange: "transform" }}
       />
     </>

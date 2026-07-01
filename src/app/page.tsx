@@ -192,25 +192,28 @@ export default function Home() {
                 Minha <span className="text-[var(--orange-bg)]">carreira</span>
               </h5>
               <p className="career-text text-white mt-4 text-center lg:text-start">
-                Sou <span className="text-[var(--orange-bg)]">graduado</span> em
+                Sou <span className="text-[var(--orange-bg)]">graduado</span> em{" "}
                 <span className="text-[var(--orange-bg)]">
                   Análise e Desenvolvimento de Sistemas
-                </span>
+                </span>{" "}
                 pela UNINTER, formação que me proporcionou a base necessária
                 para atuar de forma sólida como desenvolvedor.
                 <br />
                 <br />
-                Atuo como desenvolvedor
+                Atuo como desenvolvedor{" "}
                 <span className="text-[var(--orange-bg)]">full stack</span>, com
                 experiência em tecnologias como{" "}
                 <span className="text-[var(--orange-bg)]">
-                  Next.js, React.js, JavaScript, Node.js, Java e PHP
+                  PHP, Angular, Next.js, React.js, Node.js, Java, MySQL e
+                  PostgreSQL
                 </span>
-                , aplicando na prática os conhecimentos adquiridos na graduação
-                e expandindo continuamente minhas habilidades técnicas. Antes de
-                ingressar na área de desenvolvimento, trabalhei como designer
-                gráfico, experiência que agregou criatividade, visão estética e
-                a capacidade de unir técnica e design em projetos digitais.
+                , participando de projetos que vão desde plataformas de
+                e-commerce e CRMs até sistemas para a administração pública —
+                da criação de novas funcionalidades à evolução de sistemas
+                legados, integrações e migrações. Antes de ingressar na área
+                de desenvolvimento, trabalhei como designer gráfico,
+                experiência que agregou criatividade, visão estética e a
+                capacidade de unir técnica e design em projetos digitais.
                 <br />
                 <br /> Estou sempre em busca de novos desafios e oportunidades
                 de aprendizado, com o objetivo de evoluir continuamente e

@@ -42,13 +42,13 @@ export function ProjectsClient({ repos }: { repos: GithubRepo[] }) {
         onSelect={setSelectedLanguage}
       />
       <div
-        className="max-h-[750px] overflow-y-scroll my-12
+        className="max-h-[750px] overflow-y-scroll my-12 px-5 lg:px-10
             [&::-webkit-scrollbar]:w-2
             [&::-webkit-scrollbar-track]:bg-transparent
             [&::-webkit-scrollbar-thumb]:bg-[var(--secondary-bg)]
             [&::-webkit-scrollbar-thumb]:rounded-full"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-2 pr-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-2">
           {filteredProjects.map((repo, index) => (
             <ProjectCard key={repo.id} repo={repo} index={index} />
           ))}
