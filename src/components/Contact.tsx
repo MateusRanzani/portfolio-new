@@ -19,7 +19,7 @@ export function Contact() {
               <h3 className="text-xl font-semibold text-white">
                 Mateus Ranzani
               </h3>
-              <p className="text-gray-400">Desenvolvedor full-stack</p>
+              <p className="text-gray-400">Desenvolvedor Full-Stack</p>
             </div>
           </div>
           <ul className="space-y-4 mt-6">

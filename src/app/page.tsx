@@ -17,7 +17,7 @@ export default function Home() {
               Olá! Muito prazer, meu nome é Mateus
             </p>
             <p className="hero-title text-[var(--orange-bg)] text-[112px] font-bold text-start text leading-26">
-              Desenvolvedor <br /> Full-stack
+              Desenvolvedor <br /> Full-Stack
             </p>
             <div className="hero-desc border-l-2 border-[var(--orange-bg)] pl-2">
               <p className="text-[var(--terciary-bg)] text-xl">
@@ -125,7 +125,7 @@ export default function Home() {
               Meu nome é Mateus
             </div>
             <div className="bg-[var(--primary-bg)] text-[23px] text-white font-bold py-2 px-6 w-fit rounded-2xl">
-              Desenvolvedor Full-stack
+              Desenvolvedor Full-Stack
             </div>
             <Button className="hero-btn bg-[var(--orange-bg)] rounded-xl hover:bg-accent text-primary-foreground cursor-pointer w-full px-12 py-6 text-lg h-[54px]">
               Me contate <CircleArrowOutUpRight />
