@@ -39,6 +39,23 @@ export function AnimationProvider({ children }: ProviderProps) {
 
     let lastScroll = 0;
     let showTimeout: NodeJS.Timeout | null = null;
+    let isNavClosed = false;
+
+    const showNav = (duration = 0.35) => {
+      gsap.to(".nav-links", {
+        opacity: 1, width: "auto", visibility: "visible",
+        overflow: "visible", duration, ease: "power2.out",
+      });
+      gsap.to(".hero-download", { marginRight: 24, marginLeft: 24, duration });
+    };
+
+    const hideNav = (duration = 0.3) => {
+      gsap.to(".nav-links", {
+        opacity: 0, width: 0, visibility: "hidden",
+        overflow: "hidden", duration, ease: "power2.out",
+      });
+      gsap.to(".hero-download", { marginRight: 0, marginLeft: 0, duration });
+    };
 
     const ctx = gsap.context(() => {
       // ───────────────────────────────────────
@@ -114,32 +131,23 @@ export function AnimationProvider({ children }: ProviderProps) {
 
           if (current < 50) {
             if (showTimeout) clearTimeout(showTimeout);
-            gsap.to(".nav-links", {
-              opacity: 1, width: "auto", visibility: "visible",
-              overflow: "visible", duration: 0.4, ease: "power2.out",
-            });
-            gsap.to(".hero-download", { marginRight: 24, marginLeft: 24 });
+            isNavClosed = false;
+            showNav(0.4);
             lastScroll = current;
             return;
           }
 
           if (scrollingDown) {
             if (showTimeout) clearTimeout(showTimeout);
-            gsap.to(".nav-links", {
-              opacity: 0, width: 0, visibility: "hidden",
-              overflow: "hidden", duration: 0.4, ease: "power2.out",
-            });
-            gsap.to(".hero-download", { marginRight: 0, marginLeft: 0 });
+            isNavClosed = true;
+            hideNav(0.4);
           }
 
           if (scrollingUp) {
             if (showTimeout) clearTimeout(showTimeout);
             showTimeout = setTimeout(() => {
-              gsap.to(".nav-links", {
-                opacity: 1, width: "auto", visibility: "visible",
-                overflow: "visible", duration: 0.5, ease: "power2.out",
-              });
-              gsap.to(".hero-download", { marginRight: 24, marginLeft: 24 });
+              isNavClosed = false;
+              showNav(0.5);
             }, 200);
           }
 
@@ -274,7 +282,19 @@ export function AnimationProvider({ children }: ProviderProps) {
         .to(".contact-form", { opacity: 1, x: 0, duration: 0.7, ease: "power2.out" }, "-=0.65");
     });
 
-    return () => ctx.revert();
+    // Hover no header: abre temporariamente se o nav estava fechado pelo scroll
+    const header = document.querySelector("#main-header");
+    const onHeaderEnter = () => { if (isNavClosed) showNav(); };
+    const onHeaderLeave = () => { if (isNavClosed) hideNav(); };
+    header?.addEventListener("mouseenter", onHeaderEnter);
+    header?.addEventListener("mouseleave", onHeaderLeave);
+
+    return () => {
+      ctx.revert();
+      if (showTimeout) clearTimeout(showTimeout);
+      header?.removeEventListener("mouseenter", onHeaderEnter);
+      header?.removeEventListener("mouseleave", onHeaderLeave);
+    };
   }, []);
 
   return (

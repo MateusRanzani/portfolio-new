@@ -5,6 +5,7 @@ import { Poppins } from "next/font/google";
 import { Menu } from "@/components/Menu";
 import { Cursor } from "@/components/Cursor";
 import { AnimationProvider } from "@/providers/animationProvider";
+import { ThemeProvider } from "@/providers/ThemeProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -51,13 +52,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning>
       <body
         className={`${poppins.className} antialiased bg-[var(--secondary-bg)]`}
       >
-        <Cursor />
-        <Menu />
-        <AnimationProvider>{children}</AnimationProvider>
+        {/* Prevent flash of wrong theme before React hydrates */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme')||'dark';if(t==='light')document.documentElement.classList.add('light');}catch(e){}})()`,
+          }}
+        />
+        <ThemeProvider>
+          <Cursor />
+          <Menu />
+          <AnimationProvider>{children}</AnimationProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

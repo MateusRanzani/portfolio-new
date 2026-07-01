@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTheme } from "@/providers/ThemeProvider";
 
 const SECTIONS = [
   { id: "apresentacao", label: "Apresentação" },
@@ -13,6 +14,7 @@ type SectionId = (typeof SECTIONS)[number]["id"];
 
 export function Menu() {
   const [active, setActive] = useState<SectionId>("apresentacao");
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -89,7 +91,12 @@ export function Menu() {
         <div className="flex nav-links">
           <button
             type="button"
-            className="p-2 text-[#E4E4E4] hover:text-white transition-colors rounded-xl"
+            onClick={() => setTheme("light")}
+            className={`p-2 transition-colors duration-200 rounded-xl ${
+              theme === "light"
+                ? "text-[var(--orange-bg)]"
+                : "text-[#E4E4E4] hover:text-white"
+            }`}
             aria-label="Modo claro"
           >
             <svg
@@ -109,7 +116,12 @@ export function Menu() {
 
           <button
             type="button"
-            className="p-2 text-[#E4E4E4] hover:text-white transition-colors rounded-xl"
+            onClick={() => setTheme("dark")}
+            className={`p-2 transition-colors duration-200 rounded-xl ${
+              theme === "dark"
+                ? "text-[var(--orange-bg)]"
+                : "text-[#E4E4E4] hover:text-white"
+            }`}
             aria-label="Modo escuro"
           >
             <svg

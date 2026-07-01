@@ -35,9 +35,9 @@ export function CommentsForm() {
   }
 
   const inputClass =
-    "w-full px-4 py-3 rounded-xl bg-[#262626] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[var(--orange-bg)] focus:ring-1 focus:ring-[var(--orange-bg)]/30 transition-all duration-200 text-sm";
+    "w-full px-4 py-3 rounded-xl bg-[var(--form-input-bg)] border border-[var(--form-input-border)] text-[var(--form-input-text)] placeholder:text-[var(--form-input-placeholder)] focus:outline-none focus:border-[var(--orange-bg)] focus:ring-1 focus:ring-[var(--orange-bg)]/30 transition-all duration-200 text-sm";
 
-  const labelClass = "block text-sm font-medium text-gray-300 mb-2";
+  const labelClass = "block text-sm font-medium text-[var(--form-label)] mb-2";
 
   return (
     <form onSubmit={submitComment} className="flex flex-col gap-5">

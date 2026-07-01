@@ -87,6 +87,13 @@
   --glass: 220 18% 14%;
   --glass-border: 220 15% 25%;
 
+  /* Form inputs */
+  --form-input-bg: #262626;
+  --form-input-border: rgba(255, 255, 255, 0.12);
+  --form-input-text: #ffffff;
+  --form-input-placeholder: #6b7280;
+  --form-label: #9ca3af;
+
   --lang-typescript: 210 90% 55%;
   --lang-javascript: 45 95% 55%;
   --lang-java: 15 80% 50%;
@@ -143,6 +150,81 @@
     background-size: cover;
     background-attachment: fixed;
   }
+}
+
+/* ── Light theme ────────────────────────────────────── */
+html.light {
+  color-scheme: light;
+
+  /* Override custom portfolio variables */
+  --primary-bg: #ffffff;
+  --secondary-bg: #f4f3ef;
+  --terciary-bg: #111111;
+  --orange-bg: #fd6f00;
+
+  /* Glass card variables (dark by default, need light overrides) */
+  --glass: 40 20% 97%;
+  --glass-border: 40 10% 82%;
+
+  /* Form inputs */
+  --form-input-bg: #ffffff;
+  --form-input-border: rgba(0, 0, 0, 0.14);
+  --form-input-text: #0f0f0f;
+  --form-input-placeholder: #9ca3af;
+  --form-label: #374151;
+}
+
+/* Body background — remove dark image overlay */
+html.light body {
+  background-image: none;
+  background-color: var(--secondary-bg);
+}
+
+/* ── Text ───────────────────────────────────────────── */
+html.light .text-white {
+  color: #0f0f0f;
+}
+html.light .text-gray-400 {
+  color: #666666;
+}
+
+/* Keep white text on orange buttons (come after .text-white to win cascade) */
+html.light .hero-btn,
+html.light .hero-download {
+  color: #ffffff;
+}
+
+/* ── Borders ────────────────────────────────────────── */
+html.light .border-white\/10 {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+html.light .border-white\/5 {
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+/* ── Surfaces / backgrounds ─────────────────────────── */
+html.light .bg-white\/5 {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* Contact form card (hardcoded bg) */
+html.light .bg-\[\#1b1b1b\] {
+  background-color: #f8f7f3;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+/* ── Menu header ────────────────────────────────────── */
+html.light #main-header {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Theme toggle icons in light mode */
+html.light .nav-links button {
+  color: #555555;
+}
+html.light .nav-links button:hover {
+  color: #0f0f0f;
 }
 
 /* ── Custom cursor ──────────────────────────────────── */
