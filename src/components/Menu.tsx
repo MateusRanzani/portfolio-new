@@ -80,7 +80,7 @@ export function Menu() {
 
         {/* Download CV */}
         <a
-          href="/Profile.pdf"
+          href="/curriculo_linkedin.pdf"
           download="Mateus_Ranzani_CV.pdf"
           className="hero-download mx-6 inline-flex items-center justify-center bg-[var(--orange-bg)] hover:bg-[#e06300] active:bg-[#c95800] text-white font-medium rounded-xl px-5 py-2 text-sm transition-colors duration-200 whitespace-nowrap select-none"
         >

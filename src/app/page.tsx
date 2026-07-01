@@ -104,7 +104,7 @@ export default function Home() {
               Olá! Muito prazer, meu nome é Mateus
             </p>
             <p className="hero-title text-[var(--orange-bg)] text-[112px] font-bold text-start text leading-26">
-              Desenvolvedor <br /> Full-stack
+              Desenvolvedor <br /> Full-Stack
             </p>
             <div className="hero-desc border-l-2 border-[var(--orange-bg)] pl-2">
               <p className="text-[var(--terciary-bg)] text-xl">
@@ -137,23 +137,30 @@ export default function Home() {
             />
           </div>
 
-          <div className="absolute top-4/5 left-0 -translate-y-1/2 p-4 w-full flex lg:hidden flex-col gap-2">
-            <div className="bg-[var(--primary-bg)] text-xl text-white py-2 px-6 w-fit rounded-2xl">
-              Olá! Muito prazer
-            </div>
-            <div className="bg-[var(--primary-bg)] text-xl text-white py-2 px-6 w-fit rounded-2xl">
-              Meu nome é Mateus
-            </div>
-            <div className="bg-[var(--primary-bg)] text-[23px] text-white font-bold py-2 px-6 w-fit rounded-2xl">
-              Desenvolvedor Full-stack
+          {/* Gradient overlay mobile */}
+          <div className="absolute inset-0 lg:hidden rounded-b-[655px] bg-gradient-to-t from-[var(--primary-bg)] via-[var(--primary-bg)]/60 to-transparent" />
+
+          <div className="absolute bottom-0 left-0 w-full px-5 pb-8 flex lg:hidden flex-col gap-3">
+            <div className="flex flex-col gap-2">
+              <span className="self-start bg-white/10 backdrop-blur-sm border border-white/20 text-white/70 text-sm py-1 px-4 rounded-full">
+                Olá! Muito prazer
+              </span>
+              <span className="self-start ml-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-base py-1.5 px-5 rounded-full">
+                Meu nome é <strong>Mateus</strong>
+              </span>
+              <h1 className="text-white text-[28px] font-bold leading-tight mt-1">
+                Desenvolvedor
+                <br />
+                <span className="text-[var(--orange-bg)]">Full-Stack</span>
+              </h1>
             </div>
             <a
               href="#contato"
-              className="hero-btn inline-flex items-center justify-center gap-2 bg-[var(--orange-bg)] hover:bg-[#e06300] active:bg-[#c95800] text-white font-medium rounded-xl w-full px-12 py-6 text-lg h-[54px] transition-colors duration-200"
+              className="hero-btn inline-flex items-center justify-center gap-2 bg-[var(--orange-bg)] hover:bg-[#e06300] active:bg-[#c95800] text-white font-medium rounded-xl w-full py-4 text-base transition-colors duration-200 mt-1"
             >
-              Me contate <CircleArrowOutUpRight className="w-5 h-5" />
+              Me contate <CircleArrowOutUpRight className="w-4 h-4" />
             </a>
-            <SocialLinks className="mt-6" />
+            <SocialLinks className="mt-1" />
           </div>
         </div>
       </main>
@@ -169,55 +176,55 @@ export default function Home() {
         </p>
       </div>
       <section id="sobre">
-      <StackCarousel />
-      <div className="career-section w-full px-4 lg:px-12 my-12">
-        <div className="career-card lg:py-12 bg-[var(--primary-bg)] rounded-2xl lg:grid lg:grid-cols-2">
-          <div className="career-img relative w-full h-full hidden lg:flex">
-            <Image
-              src="/career.svg"
-              alt="Imagem principal"
-              fill
-              className="object-contain"
-            />
-          </div>
-          <div>
-            <h5 className="career-title flex justify-center gap-2 lg:justify-start text-2xl lg:text-4xl font-semibold text-white">
-              Minha <span className="text-[var(--orange-bg)]">carreira</span>
-            </h5>
-            <p className="career-text text-white mt-4 text-center lg:text-start">
-              Sou <span className="text-[var(--orange-bg)]">graduado</span> em
-              <span className="text-[var(--orange-bg)]">
-                Análise e Desenvolvimento de Sistemas
-              </span>
-              pela UNINTER, formação que me proporcionou a base necessária para
-              atuar de forma sólida como desenvolvedor.
-              <br />
-              <br />
-              Atuo como desenvolvedor
-              <span className="text-[var(--orange-bg)]">full stack</span>, com
-              experiência em tecnologias como{" "}
-              <span className="text-[var(--orange-bg)]">
-                Next.js, React.js, JavaScript, Node.js, Java e PHP
-              </span>
-              , aplicando na prática os conhecimentos adquiridos na graduação e
-              expandindo continuamente minhas habilidades técnicas. Antes de
-              ingressar na área de desenvolvimento, trabalhei como designer
-              gráfico, experiência que agregou criatividade, visão estética e a
-              capacidade de unir técnica e design em projetos digitais.
-              <br />
-              <br /> Estou sempre em busca de novos desafios e oportunidades de
-              aprendizado, com o objetivo de evoluir continuamente e construir
-              uma carreira integrada, que valorize tanto o aspecto técnico
-              quanto o criativo.
-              <br />
-              <br />
-              Acredito que tudo é possível: com a lógica certa, sempre existe um
-              caminho para superar desafios.
-            </p>
+        <StackCarousel />
+        <div className="career-section w-full px-4 lg:px-12 my-12">
+          <div className="career-card lg:py-12 bg-[var(--primary-bg)] rounded-2xl lg:grid lg:grid-cols-2">
+            <div className="career-img relative w-full h-full hidden lg:flex">
+              <Image
+                src="/career.svg"
+                alt="Imagem principal"
+                fill
+                className="object-contain"
+              />
+            </div>
+            <div>
+              <h5 className="career-title flex justify-center gap-2 lg:justify-start text-2xl lg:text-4xl font-semibold text-white">
+                Minha <span className="text-[var(--orange-bg)]">carreira</span>
+              </h5>
+              <p className="career-text text-white mt-4 text-center lg:text-start">
+                Sou <span className="text-[var(--orange-bg)]">graduado</span> em
+                <span className="text-[var(--orange-bg)]">
+                  Análise e Desenvolvimento de Sistemas
+                </span>
+                pela UNINTER, formação que me proporcionou a base necessária
+                para atuar de forma sólida como desenvolvedor.
+                <br />
+                <br />
+                Atuo como desenvolvedor
+                <span className="text-[var(--orange-bg)]">full stack</span>, com
+                experiência em tecnologias como{" "}
+                <span className="text-[var(--orange-bg)]">
+                  Next.js, React.js, JavaScript, Node.js, Java e PHP
+                </span>
+                , aplicando na prática os conhecimentos adquiridos na graduação
+                e expandindo continuamente minhas habilidades técnicas. Antes de
+                ingressar na área de desenvolvimento, trabalhei como designer
+                gráfico, experiência que agregou criatividade, visão estética e
+                a capacidade de unir técnica e design em projetos digitais.
+                <br />
+                <br /> Estou sempre em busca de novos desafios e oportunidades
+                de aprendizado, com o objetivo de evoluir continuamente e
+                construir uma carreira integrada, que valorize tanto o aspecto
+                técnico quanto o criativo.
+                <br />
+                <br />
+                Acredito que tudo é possível: com a lógica certa, sempre existe
+                um caminho para superar desafios.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <Expertise />
+        <Expertise />
       </section>
       <Projects />
       <Contact />

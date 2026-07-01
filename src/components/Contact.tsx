@@ -2,7 +2,10 @@ import { CommentsForm } from "./CommentsForm";
 
 export function Contact() {
   return (
-    <section id="contato" className="contact-section relative mt-16 lg:mt-24 overflow-hidden">
+    <section
+      id="contato"
+      className="contact-section relative mt-16 lg:mt-24 overflow-hidden"
+    >
       {/* Orange left bar — visible only on large screens */}
       <div className="contact-bar hidden lg:flex absolute top-0 left-0 w-[100px] h-full bg-[var(--orange-bg)] rounded-tr-[48px] rounded-br-[48px]" />
 
@@ -26,7 +29,7 @@ export function Contact() {
                 Mateus Ranzani
               </h3>
               <p className="text-sm text-gray-400 mt-0.5">
-                Desenvolvedor full-stack
+                Desenvolvedor Full-Stack
               </p>
             </div>
           </div>
@@ -39,7 +42,13 @@ export function Contact() {
                 className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[var(--orange-bg)]/50 hover:bg-[var(--orange-bg)]/5 transition-all duration-200"
               >
                 <span className="w-11 h-11 flex items-center justify-center bg-[var(--orange-bg)]/20 rounded-lg flex-shrink-0 group-hover:bg-[var(--orange-bg)]/30 transition-colors">
-                  <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg
+                    width="20"
+                    height="16"
+                    viewBox="0 0 20 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
                       d="M0.75 2.75968L8.6406 8.04552C9.3124 8.49559 10.1876 8.49559 10.8594 8.04552L18.75 2.75968M0.75 2.75968C0.75 1.64976 1.64543 0.75 2.75 0.75H16.75C17.8546 0.75 18.75 1.64976 18.75 2.75968M0.75 2.75968V12.8081C0.75 13.918 1.64543 14.8177 2.75 14.8177H16.75C17.8546 14.8177 18.75 13.918 18.75 12.8081V2.75968"
                       stroke="#FD6F00"
@@ -67,7 +76,13 @@ export function Contact() {
                 className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[var(--orange-bg)]/50 hover:bg-[var(--orange-bg)]/5 transition-all duration-200"
               >
                 <span className="w-11 h-11 flex items-center justify-center bg-[var(--orange-bg)]/20 rounded-lg flex-shrink-0 group-hover:bg-[var(--orange-bg)]/30 transition-colors">
-                  <svg width="22" height="22" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 25 26"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
                       d="M23.2143 0H1.78013C0.797991 0 0 0.821289 0 1.82949V23.5455C0 24.5537 0.797991 25.375 1.78013 25.375H23.2143C24.1964 25.375 25 24.5537 25 23.5455V1.82949C25 0.821289 24.1964 0 23.2143 0ZM7.5558 21.75H3.85045V9.64023H7.56138V21.75H7.5558ZM5.70312 3.625C6.27293 3.625 6.81939 3.85475 7.2223 4.2637C7.62521 4.67266 7.85156 5.22732 7.85156 5.80566C7.85156 6.38401 7.62521 6.93867 7.2223 7.34763C6.81939 7.75658 6.27293 7.98633 5.70312 7.98633C5.13332 7.98633 4.58686 7.75658 4.18395 7.34763C3.78104 6.93867 3.55469 6.38401 3.55469 5.80566C3.55469 5.22732 3.78104 4.67266 4.18395 4.2637C4.58686 3.85475 5.13332 3.625 5.70312 3.625ZM21.4453 21.75H17.74V15.8594C17.74 14.4547 17.7121 12.6479 15.8147 12.6479C13.8839 12.6479 13.5882 14.1771 13.5882 15.7574V21.75H9.88281V9.64023H13.4375V11.2941H13.4877C13.9844 10.3426 15.1953 9.34004 16.9978 9.34004C20.7478 9.34004 21.4453 11.8492 21.4453 15.1117V21.75Z"
                       fill="#FD6F00"
@@ -93,7 +108,13 @@ export function Contact() {
                 className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[var(--orange-bg)]/50 hover:bg-[var(--orange-bg)]/5 transition-all duration-200"
               >
                 <span className="w-11 h-11 flex items-center justify-center bg-[var(--orange-bg)]/20 rounded-lg flex-shrink-0 group-hover:bg-[var(--orange-bg)]/30 transition-colors">
-                  <svg width="24" height="24" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 31 31"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
                       fillRule="evenodd"
                       clipRule="evenodd"
