@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Image from "next/image";
 import { CircleArrowOutUpRight } from "lucide-react";
 import { StackCarousel } from "@/components/StackCarousel";
