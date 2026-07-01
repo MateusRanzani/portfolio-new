@@ -104,12 +104,15 @@ export function AnimationProvider({ children }: ProviderProps) {
         );
 
       // Parallax da imagem hero no scroll
+      // O wrapper com overflow-hidden nunca se move (é o recorte arredondado
+      // fixo). Quem se move é ".hero-img-media", que já nasce 40px maior que
+      // o wrapper em todas as direções (-inset-10 no JSX), exatamente o
+      // suficiente para o deslocamento de ±40px nunca expor o fundo.
       gsap.fromTo(
-        ".hero-img-wrapper",
-        { y: -40, scale: 1 },
+        ".hero-img-media",
+        { y: -40 },
         {
           y: 40,
-          scale: 1.02,
           ease: "none",
           scrollTrigger: {
             trigger: ".image-container",

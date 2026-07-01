@@ -128,13 +128,15 @@ export default function Home() {
         </div>
 
         <div className="hero-img image-container relative w-full h-[100%] max-h-[95%] lg:w-[655px] lg:h-screen lg:mr-12">
-          <div className="hero-img-wrapper w-full h-full rounded-b-[655px] overflow-hidden">
-            <Image
-              src="/main.png"
-              alt="Imagem principal"
-              fill
-              className="object-cover"
-            />
+          <div className="hero-img-wrapper w-full h-full rounded-b-[655px] overflow-hidden relative">
+            <div className="hero-img-media absolute -inset-10">
+              <Image
+                src="/main.png"
+                alt="Imagem principal"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
 
           {/* Gradient overlay mobile */}
