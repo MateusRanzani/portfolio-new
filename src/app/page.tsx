@@ -108,8 +108,8 @@ export default function Home() {
             </p>
             <div className="hero-desc border-l-2 border-[var(--orange-bg)] pl-2">
               <p className="text-[var(--terciary-bg)] text-xl">
-                Desenvolvedor <b>Full Stack</b>{" "}com experiência em&nbsp;
-                <b>Next.js, Nodejs e Java.</b> <br />
+                Desenvolvedor <b>Full Stack</b> com experiência em&nbsp;
+                <b>Next.js, Nodejs, PHP e Java.</b> <br />
                 Também crio experiências digitais intuitivas através de{" "}
                 <b>UI/UX</b>.
                 <br />
@@ -168,8 +168,8 @@ export default function Home() {
       </main>
       <div className="hero-desc border-l-2 border-[var(--orange-bg)] m-4 flex lg:hidden mt-12">
         <p className="text-[var(--terciary-bg)] text-base lg:text-xl ml-4">
-          Desenvolvedor <b>Full Stack</b>{" "}com experiência em&nbsp;
-          <b>Next.js, Nodejs e Java.</b> <br />
+          Desenvolvedor <b>Full Stack</b> com experiência em&nbsp;
+          <b>Next.js, Nodejs, PHP e Java.</b> <br />
           Também crio experiências digitais intuitivas através de <b>UI/UX</b>
           .
           <br />
@@ -210,12 +210,12 @@ export default function Home() {
                   PostgreSQL
                 </span>
                 , participando de projetos que vão desde plataformas de
-                e-commerce e CRMs até sistemas para a administração pública —
-                da criação de novas funcionalidades à evolução de sistemas
-                legados, integrações e migrações. Antes de ingressar na área
-                de desenvolvimento, trabalhei como designer gráfico,
-                experiência que agregou criatividade, visão estética e a
-                capacidade de unir técnica e design em projetos digitais.
+                e-commerce e CRMs até sistemas para a administração pública — da
+                criação de novas funcionalidades à evolução de sistemas legados,
+                integrações e migrações. Antes de ingressar na área de
+                desenvolvimento, trabalhei como designer gráfico, experiência
+                que agregou criatividade, visão estética e a capacidade de unir
+                técnica e design em projetos digitais.
                 <br />
                 <br /> Estou sempre em busca de novos desafios e oportunidades
                 de aprendizado, com o objetivo de evoluir continuamente e
